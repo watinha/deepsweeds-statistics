@@ -1,0 +1,2 @@
+dataset,model,fold,file,path,input_h,input_w,batch,steps,lat_ms_p50,lat_ms_p95,lat_ms_mean,fps_p50,fps_p95,fps_mean,preprocess_embutido
+weed6c,mobilenetv3large,fold_2,best_weed6c_mobilenetv3large_fold_2_finetune.keras,/home/leo/Documentos/mestrado/DeepWeeds-Mobile/models/weed6c-fold2/best_weed6c_mobilenetv3large_fold_2_finetune.keras,224,224,1,200,76.097,78.956,77.594,13.14,12.67,12.89,1

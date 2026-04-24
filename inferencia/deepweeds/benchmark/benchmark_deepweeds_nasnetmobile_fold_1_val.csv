@@ -1,0 +1,2 @@
+dataset,model,fold,file,path,input_h,input_w,batch,steps,lat_ms_p50,lat_ms_p95,lat_ms_mean,fps_p50,fps_p95,fps_mean,preprocess_embutido
+deepweeds,nasnetmobile,fold_1,best_deepweeds_nasnetmobile_fold_1_finetune.keras,/home/leo/Documentos/mestrado/DeepWeeds-Mobile/models/deepweeds-fold1/best_deepweeds_nasnetmobile_fold_1_finetune.keras,224,224,1,200,273.23,284.913,276.479,3.66,3.51,3.62,0

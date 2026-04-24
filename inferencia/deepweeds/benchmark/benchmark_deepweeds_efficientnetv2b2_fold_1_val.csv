@@ -1,0 +1,2 @@
+dataset,model,fold,file,path,input_h,input_w,batch,steps,lat_ms_p50,lat_ms_p95,lat_ms_mean,fps_p50,fps_p95,fps_mean,preprocess_embutido
+deepweeds,efficientnetv2b2,fold_1,best_deepweeds_efficientnetv2b2_fold_1_finetune.keras,/home/leo/Documentos/mestrado/DeepWeeds-Mobile/models/deepweeds-fold1/best_deepweeds_efficientnetv2b2_fold_1_finetune.keras,260,260,1,200,169.954,178.88,176.122,5.88,5.59,5.68,1
