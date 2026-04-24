@@ -82,12 +82,16 @@ if p_value < 0.05:
 
             if p_value < 0.05:
                 print(f"\nSignificant difference between {MODELS[i]} vs {MODELS[j]}:")
-                print(f'Accuracy {MODELS[i]}: {accuracy_score(raw_results[MODELS[i]]["y_true_idx"], raw_results[MODELS[i]]["y_pred_idx"])}')
-                print(f'Accuracy {MODELS[j]}: {accuracy_score(raw_results[MODELS[j]]["y_true_idx"], raw_results[MODELS[j]]["y_pred_idx"])}')
+                accuracy_i = accuracy_score(raw_results[MODELS[i]]["y_true_idx"], raw_results[MODELS[i]]["y_pred_idx"])
+                accuracy_j = accuracy_score(raw_results[MODELS[j]]["y_true_idx"], raw_results[MODELS[j]]["y_pred_idx"])
+                print(f'Accuracy {MODELS[i]}: {accuracy_i}')
+                print(f'Accuracy {MODELS[j]}: {accuracy_j}')
                 print(f"McNemar's Test Statistic: {chi2}")
                 print(f"P-value: {p_value}")
 
-                table_df.loc[MODELS[i], MODELS[j]] = p_value
+                i_j = accuracy_i > accuracy_j
+                table_df.loc[MODELS[i], MODELS[j]] = f'{p_value:.3} { '<' if i_j else '^' }'
+                table_df.loc[MODELS[j], MODELS[i]] = f'{p_value:.3} { '^' if i_j else '<' }'
 
 
 print(table_df)
