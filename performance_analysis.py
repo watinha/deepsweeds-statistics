@@ -86,7 +86,8 @@ def run_analysis_on (metric, dfs):
             metric_array = np.array([df[metric].to_numpy() for df in dfs.values()])
             metric_array = metric_array.T
             posthoc_results = posthoc_nemenyi_friedman(metric_array)
-            posthoc_results_df = pd.DataFrame(posthoc_results, index=dfs.keys(), columns=dfs.keys())
+            posthoc_results.index = dfs.keys()
+            posthoc_results.columns = dfs.keys()
 
 
     shapiro_results['group_id'] = group_ids
@@ -97,7 +98,7 @@ def run_analysis_on (metric, dfs):
     with pd.ExcelWriter(f'./resultados/performance_analysis_{metric}.xlsx') as writer:
         summary_df.to_excel(writer, sheet_name='summary', index=False)
         shapiro_results.to_excel(writer, sheet_name='shapiro_results', index=False)
-        posthoc_results_df.to_excel(writer, sheet_name='posthoc_nemenyi', index=True)
+        posthoc_results.to_excel(writer, sheet_name='posthoc_nemenyi', index=True)
 
 
 if __name__ == "__main__":
